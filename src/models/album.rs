@@ -121,12 +121,10 @@ pub struct Album {
     pub has_explicit_lyrics: bool,
 
     /// `The explicit content lyrics values (0:Not Explicit; 1:Explicit; 2:Unknown; 3:Edited; 4:Partially Explicit (Album "lyrics" only); 5:Partially Unknown (Album "lyrics" only); 6:No Advice Available; 7:Partially No Advice Available (Album "lyrics" only))`
-    #[serde(rename = "explicit_content_lyrics")]
-    pub has_explicit_content_lyrics: bool,
+    pub explicit_content_lyrics: u64,
 
     /// `The explicit cover values (0:Not Explicit; 1:Explicit; 2:Unknown; 3:Edited; 4:Partially Explicit (Album "lyrics" only); 5:Partially Unknown (Album "lyrics" only); 6:No Advice Available; 7:Partially No Advice Available (Album "lyrics" only))`
-    #[serde(rename = "explicit_content_cover")]
-    pub has_explicit_content_cover: bool,
+    pub explicit_content_cover: u64,
 
     /// `Return a list of contributors on the album`
     pub contributors: Vec<ContributorArtist>,
