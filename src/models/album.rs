@@ -3,7 +3,9 @@
 
 use serde::{Deserialize, Serialize};
 
-use crate::models::{Artist, ContributorArtist, DeezerArray, DeezerObject, DeezerUpcObject, Genre, Track, Upc};
+use crate::models::{
+    Artist, ContributorArtist, DeezerArray, DeezerObject, DeezerUpcObject, Genre, Track, Upc,
+};
 use crate::Result;
 
 /// Contains all the information provided for an Album.
@@ -74,6 +76,9 @@ pub struct Album {
     /// `The url of the album's cover in size xl.`
     pub cover_xl: String,
 
+    /// `The cover image hashed using md5.`
+    pub md5_image: String,
+
     /// `The album's first genre id (You should use the genre list instead).`
     pub genre_id: Option<i32>,
 
@@ -92,9 +97,6 @@ pub struct Album {
 
     /// `The number of album's Fans`
     pub fans: u64,
-
-    /// `The album's rate`
-    pub rating: u64,
 
     /// `The album's release date`
     pub release_date: String,
@@ -117,6 +119,14 @@ pub struct Album {
     /// `Whether the album contains explicit lyrics`
     #[serde(rename = "explicit_lyrics")]
     pub has_explicit_lyrics: bool,
+
+    /// `The explicit content lyrics values (0:Not Explicit; 1:Explicit; 2:Unknown; 3:Edited; 4:Partially Explicit (Album "lyrics" only); 5:Partially Unknown (Album "lyrics" only); 6:No Advice Available; 7:Partially No Advice Available (Album "lyrics" only))`
+    #[serde(rename = "explicit_content_lyrics")]
+    pub has_explicit_content_lyrics: bool,
+
+    /// `The explicit cover values (0:Not Explicit; 1:Explicit; 2:Unknown; 3:Edited; 4:Partially Explicit (Album "lyrics" only); 5:Partially Unknown (Album "lyrics" only); 6:No Advice Available; 7:Partially No Advice Available (Album "lyrics" only))`
+    #[serde(rename = "explicit_content_cover")]
+    pub has_explicit_content_cover: bool,
 
     /// `Return a list of contributors on the album`
     pub contributors: Vec<ContributorArtist>,
