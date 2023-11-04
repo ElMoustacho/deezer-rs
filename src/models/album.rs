@@ -244,7 +244,7 @@ pub struct AlbumTrack {
     pub title_short: String,
 
     /// `The track version`
-    pub title_version: String,
+    pub title_version: Option<String>,
 
     /// `The url of the track on Deezer`
     pub link: String,
