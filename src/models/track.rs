@@ -50,7 +50,7 @@ pub struct Track {
     pub title_short: String,
 
     /// `The track's version`
-    pub title_version: String,
+    pub title_version: Option<String>,
 
     /// `The track's unseen status`
     #[serde(default)]
